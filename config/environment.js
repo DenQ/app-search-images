@@ -4,6 +4,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'app-search-images',
+    podModulePrefix: 'app-search-images/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
