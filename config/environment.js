@@ -22,7 +22,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    flickr: {
+      key: 'bf041bd78a382f2b6600956a65239c28',
+    },
   };
 
   if (environment === 'development') {
