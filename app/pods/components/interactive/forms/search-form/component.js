@@ -8,7 +8,8 @@ export default Ember.Component.extend({
   actions: {
     send() {
       const searchString = this.get('searchString');
-      console.log(333, searchString);
+      const route = this.get('currentRoute').getRoute();
+      route.transitionTo('search', searchString);
     },
   },
 });
