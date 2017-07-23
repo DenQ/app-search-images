@@ -11,5 +11,14 @@ export default DS.RESTAdapter.extend({
         reject(jqXHR);
       });
     });
+  },
+  queryRecord(store, type, query) {
+    return new Ember.RSVP.Promise((resolve, reject) => {
+      Ember.$.getJSON(this.get('host'), query).then(function(data) {
+        resolve(data);
+      }, function(jqXHR) {
+        reject(jqXHR);
+      });
+    });
   }
 });
