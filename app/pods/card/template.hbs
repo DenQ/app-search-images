@@ -1,12 +1,14 @@
-<h3>Title: {{model.card.title}}</h3>
+<h3>Title: {{model.card.title._content}}</h3>
 
-<div><img src="{{model.card.url_l}}" /></div>
+<div><img src="{{model.card.lastSize.source}}" width="98%"/></div>
 
 <dl>
   <dt>Description</dt>
   <dd>{{model.card.description._content}}</dd>
+  <dt>Views</dt>
+  <dd>{{model.card.views}}</dd>
   <dt>Faves</dt>
   <dd>{{model.card.count_faves}}</dd>
   <dt>Comments</dt>
-  <dd>{{model.card.count_comments}}</dd>
+  <dd>{{model.card.comments._content}}</dd>
 </dl>
