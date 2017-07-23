@@ -1,0 +1,9 @@
+<div class="flex-container">
+  {{#each model.search as |item|}}
+    <div class="flex-item">
+      {{#link-to "card" item.id}}
+        <img src="{{item.url_q}}">
+      {{/link-to}}
+  </div>
+  {{/each}}
+</div>
