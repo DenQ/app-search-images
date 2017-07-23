@@ -2,5 +2,5 @@
   <div class="form-group">
     {{input value=searchString class="form-control" placeholder="Search"}}
   </div>
-  {{#bs-button disabled=disabled class="btn-primary"}}Ok{{/bs-button}}
+  {{#bs-button disabled=disabled class="btn-primary" onClick=(action "send")}}Ok{{/bs-button}}
 </form>
