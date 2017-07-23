@@ -1,1 +1,7 @@
-{{outlet}}
+<div class="flex-container">
+  {{#each model.search as |item|}}
+    <div class="flex-item">
+      <img src="{{item.url_m}}">
+  </div>
+  {{/each}}
+</div>
