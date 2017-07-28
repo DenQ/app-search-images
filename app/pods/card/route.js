@@ -1,5 +1,4 @@
 import Ember from 'ember';
-// import fakeData from 'app-search-images/data/search-fake';
 
 export default Ember.Route.extend({
   titleToken: function(model) {
@@ -9,7 +8,6 @@ export default Ember.Route.extend({
 
   model(params) {
     const { id } = params;
-    // const card = fakeData.filter(item => item.id === id);
 
     const card = this.store.queryRecord('photo', {
       // sort: 'relevance',
