@@ -1,7 +1,11 @@
 import Ember from 'ember';
-import fakeData from 'app-search-images/data/search-fake';
+// import fakeData from 'app-search-images/data/search-fake';
 
 export default Ember.Route.extend({
+  titleToken: function(model) {
+    const { searchString } = model;
+    return `search:${searchString}`;
+  },
 
   model(params) {
     const { searchString } = params;
@@ -18,6 +22,7 @@ export default Ember.Route.extend({
     });
 
     return Ember.RSVP.hash({
+      searchString,
       search: x,
     });
   },

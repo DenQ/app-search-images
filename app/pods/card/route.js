@@ -2,6 +2,10 @@ import Ember from 'ember';
 // import fakeData from 'app-search-images/data/search-fake';
 
 export default Ember.Route.extend({
+  titleToken: function(model) {
+    const { card } = model;
+    return card.get('title._content');
+  },
 
   model(params) {
     const { id } = params;
