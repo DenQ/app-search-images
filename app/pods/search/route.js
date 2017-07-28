@@ -1,9 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  titleToken: function(model) {
+  titleToken(model) {
     const { searchString } = model;
     return `search:${searchString}`;
+  },
+  breadCrumb: {
+    title: 'Search',
   },
 
   model(params) {
