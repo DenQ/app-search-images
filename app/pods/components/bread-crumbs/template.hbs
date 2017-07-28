@@ -1,0 +1,5 @@
+<li>{{#link-to 'index'}}Home{{/link-to}}</li>
+{{log this}}
+{{#each routeHierarchy as |route|}}
+  {{bread-crumb route=route breadCrumbs=this}}
+{{/each}}

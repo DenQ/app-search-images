@@ -1,9 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  titleToken: function(model) {
+  titleToken(model) {
     const { card } = model;
     return card.get('title._content');
+  },
+  breadCrumb: {
+    title: 'Card',
   },
 
   model(params) {
