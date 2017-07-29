@@ -7,19 +7,19 @@ moduleForAcceptance('Acceptance | index');
 test('visiting /', function(assert) {
   page.visit();
 
-  andThen(function() {
+  andThen(() => {
     assert.equal(currentURL(), '/');
   });
 });
 
 test('searching from index page', function(assert) {
-  const searchString = 'sun'
+  const searchString = 'sun';
   page
     .visit()
     .searchString(searchString)
     .submit();
 
-  andThen(function() {
+  andThen(() => {
     assert.equal(currentURL(), `/search/${searchString}`);
   });
 });
