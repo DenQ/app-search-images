@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
   title: DS.attr(),
@@ -7,7 +8,6 @@ export default DS.Model.extend({
   comments: DS.attr(),
   views: DS.attr('number'),
   count_faves: DS.attr('number'),
-
 
   lastSize: Ember.computed('sizes', function() {
     const sizes = this.get('sizes.size');
