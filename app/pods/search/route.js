@@ -11,7 +11,7 @@ export default Ember.Route.extend({
 
   model(params) {
     const { searchString } = params;
-    const search = this.get('action').searchItem(searchString);
+    const search = this.get('actionData').searchItem(searchString);
 
     return Ember.RSVP.hash({
       searchString,

@@ -11,7 +11,7 @@ export default Ember.Route.extend({
 
   model(params) {
     const { id } = params;
-    const action = this.get('action');
+    const action = this.get('actionData');
     const comments = action.searchComments(id);
     const card = action.searchCard(id);
 
