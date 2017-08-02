@@ -9,6 +9,25 @@
   <dd>{{model.card.views}}</dd>
   <dt>Faves</dt>
   <dd>{{model.card.count_faves}}</dd>
-  <dt>Comments</dt>
-  <dd>{{model.card.comments._content}}</dd>
+  <!-- <dt>Comments</dt> -->
+  <!-- <dd>{{!model.card.comments._content}}</dd> -->
 </dl>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Comments</h3>
+  </div>
+  <div class="panel-body">
+
+    <ul class="list-group">
+      {{#each model.comments as |item|}}
+        <li class="list-group-item">
+          <span class="badge">{{item.ago}}</span>
+          {{item.message}}
+        </li>
+      {{/each}}
+    </ul>
+
+  </div>
+</div>
