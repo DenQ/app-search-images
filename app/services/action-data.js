@@ -15,10 +15,14 @@ function getCriteria(obj) {
 export default Ember.Service.extend({
   store: Ember.inject.service(),
 
-  searchItem(searchString) {
+  searchItem(meta = {}) {
+    const { searchString, page, perPage } = meta;
     const criteria = getCriteria({
       sort: 'relevance',
+      per_page: perPage,
       text: searchString,
+      page,
+      view_all:1,
       method: 'flickr.photos.search',
       extras: 'can_comment,count_comments,count_faves,description,isfavorite,license,media,needs_interstitial,owner_name,path_alias,realname,rotation,url_c,url_l,url_m,url_n,url_q,url_s,url_sq,url_t,url_z',
     });

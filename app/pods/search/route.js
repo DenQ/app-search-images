@@ -8,10 +8,23 @@ export default Ember.Route.extend({
   breadCrumb: {
     title: 'Search',
   },
+  queryParams: {
+    page: {
+      refreshModel: true,
+      replace: true,
+    },
+    perPage: {
+      refreshModel: true,
+    },
+  },
 
   model(params) {
-    const { searchString } = params;
-    const search = this.get('actionData').searchItem(searchString);
+    const { searchString, page, perPage } = params;
+    const search = this.get('actionData').searchItem({
+      searchString,
+      perPage,
+      page,
+    });
 
     return Ember.RSVP.hash({
       searchString,
