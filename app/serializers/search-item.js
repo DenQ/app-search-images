@@ -8,7 +8,7 @@ export default ApplicationSerializer.extend({
     const scope = this.get('scope');
     scope.set('search', {
       perpage,
-      pages,
+      pages: pages < 41 ? pages : 41, // Now, for perpage === 100
       page,
     });
     payload.searchItems = payload.photos.photo;
