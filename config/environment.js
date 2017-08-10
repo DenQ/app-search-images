@@ -49,7 +49,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.rootURL = '/app-search-images';
+    ENV.locationType = 'hash';
   }
 
   return ENV;
