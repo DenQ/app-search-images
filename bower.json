@@ -1,6 +1,0 @@
-{
-  "name": "app-search-images",
-  "dependencies": {
-    "nprogress": "alexlafroscia/nprogress#allow-alternate-scheduler"
-  }
-}
