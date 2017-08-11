@@ -1,7 +1,14 @@
-{{#bs-button class="btn-link"}}more...{{/bs-button}}
-{{#each modelReversed as |item|}}
+{{#each modelResult as |item|}}
   <li class="list-group-item">
     <span class="badge">{{item.ago}}</span>
     {{item.message}}
   </li>
 {{/each}}
+
+{{#if showButton}}
+  {{#bs-button class="btn-link" onClick=(action "showMore")}}more...{{/bs-button}}
+{{/if}}
+
+{{#if isEmpty}}
+  Empty list
+{{/if}}
