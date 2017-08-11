@@ -18,14 +18,7 @@
   </div>
   <div class="panel-body">
 
-    <ul class="list-group">
-      {{#each model.comments as |item|}}
-        <li class="list-group-item">
-          <span class="badge">{{item.ago}}</span>
-          {{item.message}}
-        </li>
-      {{/each}}
-    </ul>
+    {{interactive/lists/comments-list model=model.comments}}
 
   </div>
 </div>
