@@ -7,5 +7,5 @@ moduleForComponent('interactive/lists/comments-list', 'Integration | Component |
 
 test('it renders', function(assert) {
   this.render(hbs`{{interactive/lists/comments-list}}`);
-  assert.equal(this.$().text().trim(), 'more...');
+  assert.equal(this.$().text().trim(), 'Empty list');
 });

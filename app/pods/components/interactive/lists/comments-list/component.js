@@ -1,21 +1,20 @@
 import Ember from 'ember';
 import computedReverse from 'app-search-images/libs/computed/reverse';
+import computedZeroSlice from 'app-search-images/libs/computed/zero-slice';
 
 const { computed } = Ember;
+const SIZE_COMMEMTS = 10;
 
 export default Ember.Component.extend({
   tagName: 'ul',
   classNames: ['list-group'],
 
   modeFull: false,
-  more10: computed.gt('model.length', 10),
+  more10: computed.gt('model.length', SIZE_COMMEMTS),
   isEmpty: computed.empty('model'),
 
   modelReversed: computedReverse('datecreate'),
-  model10: computed('modelReversed', function() {
-    const model = this.get('modelReversed');
-    return model.slice(0, 10);
-  }),
+  model10: computedZeroSlice('modelReversed', SIZE_COMMEMTS),
   modelResult: computed('model', 'modeFull', function() {
     const modeFull = this.get('modeFull');
     return modeFull ? this.get('modelReversed') : this.get('model10');
