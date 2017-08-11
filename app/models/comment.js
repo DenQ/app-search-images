@@ -1,17 +1,18 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 import moment from 'moment';
+import { number, string } from 'app-search-images/libs/types-shims';
 
 export default DS.Model.extend({
-  author: DS.attr('string'),
-  authorname: DS.attr('string'),
-  iconserver: DS.attr('number'),
-  iconfarm: DS.attr('number'),
-  datecreate: DS.attr('number'),
-  permalink: DS.attr('string'),
-  path_alias: DS.attr('string'),
-  realname: DS.attr('string'),
-  message: DS.attr('string'),
+  author      : string,
+  authorname  : string,
+  iconserver  : number,
+  iconfarm    : number,
+  datecreate  : number,
+  permalink   : string,
+  path_alias  : string,
+  realname    : string,
+  message     : string,
 
   ago: Ember.computed('datecreate', function() {
     const datecreate = this.get('datecreate');

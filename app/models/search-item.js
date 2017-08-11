@@ -1,7 +1,8 @@
 import DS from 'ember-data';
+import { string } from 'app-search-images/libs/types-shims';
 
 export default DS.Model.extend({
-  title: DS.attr('string'),
-  url_q: DS.attr('string'),
+  title: string,
+  url_q: string,
 
 });
