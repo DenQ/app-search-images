@@ -16,13 +16,18 @@ export default Ember.Route.extend({
     perPage: {
       refreshModel: true,
     },
+    colorCodes: {
+      refreshModel: true,
+      replace: true,
+    },
   },
 
   model(params) {
-    const { searchString, page, perPage } = params;
+    const { searchString, page, perPage, colorCodes } = params;
     const search = this.get('actionData').searchItem({
-      searchString,
-      perPage,
+      color_codes: colorCodes,
+      text: searchString,
+      per_page: perPage,
       page,
     });
 

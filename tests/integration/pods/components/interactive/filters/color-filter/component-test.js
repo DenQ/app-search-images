@@ -13,13 +13,4 @@ test('it renders', function(assert) {
   this.render(hbs`{{interactive/filters/color-filter}}`);
 
   assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#interactive/filters/color-filter}}
-      template block text
-    {{/interactive/filters/color-filter}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

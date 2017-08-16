@@ -28,27 +28,27 @@ const colors = [
   },
 
   {
-    id: '3',
+    id: 3,
     code: '#ffcf00',
     title: 'School bus yellow',
   },
   {
-    id: '5',
+    id: 5,
     code: '#90e200',
     title: 'Green',
   },
   {
-    id: '6',
+    id: 6,
     code: '#00ab00',
     title: 'Dark lime green',
   },
   {
-    id: '7',
+    id: 7,
     code: '#00b2d4',
     title: 'Cyan',
   },
   {
-    id: '8',
+    id: 8,
     code: '#0062c6',
     title: 'Blue',
   },
@@ -84,4 +84,14 @@ export default Ember.Component.extend({
   tagName: 'ul',
   classNames: ['color-filter'],
   colors,
+
+  actions: {
+    setColor(color) {
+      const { id } = color;
+      const route = this.get('currentRoute').getRoute();
+      route.transitionTo({
+        queryParams: { colorCodes: id }
+      });
+    },
+  },
 });
