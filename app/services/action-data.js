@@ -22,13 +22,15 @@ export default Ember.Service.extend({
       per_page: perPage,
       text: searchString,
       page,
-      view_all:1,
+      color_codes: 0,
+      view_all: 1,
       method: 'flickr.photos.search',
       extras: 'can_comment,count_comments,count_faves,description,isfavorite,license,media,needs_interstitial,owner_name,path_alias,realname,rotation,url_c,url_l,url_m,url_n,url_q,url_s,url_sq,url_t,url_z',
     });
     return this.get('store').query('searchItem', criteria);
   },
 
+  // @todo rename method like - getCard
   searchCard(id) {
     const criteria = getCriteria({
       sort: 'relevance',
@@ -39,6 +41,7 @@ export default Ember.Service.extend({
     return this.get('store').queryRecord('photo', criteria);
   },
 
+  // @todo rename method like - getComments
   searchComments(id) {
     const criteria = getCriteria({
       photo_id: id,
