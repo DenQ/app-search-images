@@ -25,6 +25,7 @@ const colors = [
     id: 4,
     code: '#fffa00',
     title: 'Lemon yellow',
+    isActive: true,
   },
 
   {
@@ -84,13 +85,17 @@ export default Ember.Component.extend({
   tagName: 'ul',
   classNames: ['color-filter'],
   colors,
+  setColors: '',
 
   actions: {
     setColor(color) {
       const { id } = color;
       const route = this.get('currentRoute').getRoute();
       route.transitionTo({
-        queryParams: { colorCodes: id }
+        queryParams: {
+          colorCodes: id,
+          page: 1,
+        }
       });
     },
   },
