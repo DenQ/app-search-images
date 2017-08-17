@@ -16,6 +16,7 @@
 
 // COLOR FILTER
 ul.color-filter{
+  margin: 0;
   li{
     display: inline-block;
     width: 50px;
@@ -23,5 +24,12 @@ ul.color-filter{
     border-radius: 2px;
     position: relative;
     cursor: pointer;
+    margin: 0;
+  }
+  li.isActive{
+    height: 5px;
+  }
+  li.dummy{
+    height: 0px;
   }
 }

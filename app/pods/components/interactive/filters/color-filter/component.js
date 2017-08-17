@@ -1,5 +1,11 @@
 import Ember from 'ember';
 
+// color schema
+// 0, 1, 2, b, 4,
+// 3, 5, 6, 7, 8,
+// 9, a, c, d, e,
+//
+// styles: blackandwhite, depthoffield, minimalism, pattern
 const colors = [
   {
     id: 0,
@@ -82,8 +88,8 @@ const colors = [
 ];
 
 export default Ember.Component.extend({
-  tagName: 'ul',
-  classNames: ['color-filter'],
+  // tagName: 'ul',
+  // classNames: ['color-filter'],
   colors,
   setColors: '',
 
