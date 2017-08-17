@@ -5,7 +5,7 @@
 </ul>
 
 <ul class="color-filter">
-  {{#each colors as |item|}}
+  {{#each activeColors as |item|}}
     {{#if item.isActive}}
       <li class="isActive" style="background-color:{{item.code}}" title="{{item.title}}" {{action "setColor" item}}></li>
     {{else}}
