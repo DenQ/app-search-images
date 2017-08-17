@@ -29,7 +29,6 @@ export default [
     id: 4,
     code: '#fffa00',
     title: 'Lemon yellow',
-    isActive: true,
   },
 
   {

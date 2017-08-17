@@ -7,7 +7,7 @@ export default Ember.Component.extend({
 
   activeColors: Ember.computed('colors', 'activeColorCodes', function() {
     const colors = this.get('colors');
-    const activeColorCodesString = this.get('activeColorCodes');
+    const activeColorCodesString = this.get('activeColorCodes') || '';
     const activeColorCodesCollection = activeColorCodesString.split(',');
     return colors.map((item) => {
       activeColorCodesCollection.forEach((color) => {
