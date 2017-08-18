@@ -12,5 +12,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{interactive/panels/advenced-search-panel}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim().length > 0, true);
 });
