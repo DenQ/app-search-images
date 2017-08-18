@@ -71,6 +71,7 @@ export default [
     id: 'c',
     code: '#fff',
     title: 'White',
+    whiteSchema: true,
   },
   {
     id: 'd',

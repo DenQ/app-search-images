@@ -1,13 +1,20 @@
 <ul class="color-filter">
   {{#each colors as |item|}}
-    <li style="background-color:{{item.code}}" title="{{item.title}}" {{action "setColor" item}}></li>
+    {{interactive/item-list/color-filter-item
+      handlerClick=(action "setColor")
+      model=item
+    }}
   {{/each}}
 </ul>
 
 <ul class="color-filter">
   {{#each activeColors as |item|}}
     {{#if item.isActive}}
-      <li class="isActive" style="background-color:{{item.code}}" title="{{item.title}}" {{action "setColor" item}}></li>
+      {{interactive/item-list/color-filter-item
+        handlerClick=(action "setColor" item)
+        class="isActive"
+        model=item
+      }}
     {{else}}
       <li class="dummy"></li>
     {{/if}}
