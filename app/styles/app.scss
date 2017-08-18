@@ -13,3 +13,30 @@
     display: none;
   }
 }
+
+// COLOR FILTER
+.advenced-search-panel{
+  padding: 25px;
+}
+ul.color-filter{
+  margin: 0;
+  padding: 0;
+  li{
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+  }
+  li.isActive{
+    height: 5px;
+  }
+  li.dummy{
+    height: 0px;
+  }
+  li.whiteSchema{
+    border: 1px solid #ccc;
+  }
+}

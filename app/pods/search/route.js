@@ -16,14 +16,25 @@ export default Ember.Route.extend({
     perPage: {
       refreshModel: true,
     },
+    colorCodes: {
+      refreshModel: true,
+      replace: true,
+    },
+    sort: {
+      refreshModel: true,
+      replace: true,
+    },
   },
 
   model(params) {
-    const { searchString, page, perPage } = params;
+    const { searchString, page, perPage, colorCodes, sort } = params;
+    // console.log(1, sort);
     const search = this.get('actionData').searchItem({
-      searchString,
-      perPage,
+      color_codes: colorCodes,
+      text: searchString,
+      per_page: perPage,
       page,
+      sort: Ember.isEmpty(sort) ? 'relevance' : sort,
     });
 
     return Ember.RSVP.hash({

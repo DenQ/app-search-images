@@ -1,0 +1,12 @@
+{{interactive/filters/color-filter activeColorCodes=activeColorCodes}}
+
+{{#bs-button-group
+  value=sort
+  type="radio"
+  onChange=(action (mut sort)) as |bg|
+}}
+  {{#bg.button value='relevance'}}Relevant{{/bg.button}}
+  {{#bg.button value='date-posted-desc'}}Date uploaded{{/bg.button}}
+  {{#bg.button value='date-taken-desc'}}Date taken{{/bg.button}}
+  {{#bg.button value='interestingness-desc'}}Interesting{{/bg.button}}
+{{/bs-button-group}}
