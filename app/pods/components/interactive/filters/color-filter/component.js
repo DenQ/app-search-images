@@ -19,10 +19,23 @@ export default Ember.Component.extend({
   actions: {
     setColor(color) {
       const { id } = color;
+      const idString = String(id);
+      const activeColorCodesString = this.get('activeColorCodes') || '';
+      const activeColorCodesCollection = activeColorCodesString.split(',');
+      if (activeColorCodesCollection.includes(idString)) {
+        const index = activeColorCodesCollection.indexOf(idString);
+        activeColorCodesCollection.splice(index, 1);
+      } else {
+        activeColorCodesCollection.push(idString);
+      }
+      const colorCodes = activeColorCodesCollection
+        .filter((item) => !Ember.isEmpty(item))
+        .join(',');
+
       const route = this.get('currentRoute').getRoute();
       route.transitionTo({
         queryParams: {
-          colorCodes: id,
+          colorCodes: colorCodes || undefined,
           page: 1,
         }
       });
