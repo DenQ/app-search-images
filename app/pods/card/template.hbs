@@ -1,6 +1,14 @@
 <h3>Title: {{model.card.title}}</h3>
 
-<div><img src="{{model.card.lastSize.source}}" width="98%"/></div>
+<div class="card-photo">
+  <!-- <img src="{{model.card.lastPhoto.source}}" width="98%"/> -->
+  <div class="image-main">
+    <img src="{{model.card.mediumPhoto.source}}"/>
+  </div>
+  {{interactive/lists/photos-list model=model.card.photos}}
+</div>
+
+<div class="clearfix"></div>
 
 <dl>
   <dt>Description</dt>

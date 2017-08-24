@@ -2,6 +2,8 @@ import DS from 'ember-data';
 import Ember from 'ember';
 import { number, string, structure } from '../libs/types-shims';
 
+const { computed } = Ember;
+
 export default DS.Model.extend({
   title       : string,
   description : string,
@@ -10,8 +12,16 @@ export default DS.Model.extend({
   sizes       : structure,
   comments    : structure,
 
-  lastSize: Ember.computed('sizes', function() {
-    const sizes = this.get('sizes.size');
-    return Ember.A(sizes).get('lastObject');
+  photos: computed.reads('sizes.size'),
+
+  lastPhoto: computed('photos', function() {
+    const photos = this.get('photos');
+    return Ember.A(photos).get('lastObject');
   }),
+
+  mediumPhoto: computed('photos', function() {
+    const photos = this.get('photos');
+    return Ember.A(photos).objectAt(5);
+  }),
+
 });
