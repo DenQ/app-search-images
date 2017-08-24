@@ -3,10 +3,15 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   queryParams: ['q'],
   q: null,
+  open: false,
+  photoCurrent: null,
 
   actions: {
     showPhoto(photo) {
-      console.log(111, photo);
+      this.setProperties({
+        openModal: true,
+        photoCurrent: photo,
+      });
     },
   },
 
