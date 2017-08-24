@@ -1,11 +1,13 @@
 <h3>Title: {{model.card.title}}</h3>
 
 <div class="card-photo">
-  <!-- <img src="{{model.card.lastPhoto.source}}" width="98%"/> -->
   <div class="image-main">
     <img src="{{model.card.mediumPhoto.source}}"/>
   </div>
-  {{interactive/lists/photos-list model=model.card.photos}}
+  {{interactive/lists/photos-list
+    handlerClick=(action "showPhoto")
+    model=model.card.photos
+  }}
 </div>
 
 <div class="clearfix"></div>

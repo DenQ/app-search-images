@@ -21,7 +21,7 @@ export default DS.Model.extend({
 
   mediumPhoto: computed('photos', function() {
     const photos = this.get('photos');
-    return Ember.A(photos).objectAt(5);
+    return Ember.A(photos).objectAt(4);
   }),
 
 });
