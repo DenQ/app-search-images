@@ -1,6 +1,16 @@
 <h3>Title: {{model.card.title}}</h3>
 
-<div><img src="{{model.card.lastSize.source}}" width="98%"/></div>
+<div class="card-photo">
+  <div class="image-main">
+    <img src="{{model.card.mediumPhoto.source}}"/>
+  </div>
+  {{interactive/lists/photos-list
+    handlerClick=(action "showPhoto")
+    model=model.card.photos
+  }}
+</div>
+
+<div class="clearfix"></div>
 
 <dl>
   <dt>Description</dt>
@@ -22,3 +32,8 @@
 
   </div>
 </div>
+
+{{interactive/modals/photo-modal
+  model=photoCurrent
+  open=openModal
+}}

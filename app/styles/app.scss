@@ -40,3 +40,35 @@ ul.color-filter{
     border: 1px solid #ccc;
   }
 }
+
+
+// card photo
+.card-photo{
+  .image-main{
+    float: left;
+    img{
+      height: 320px;
+    }
+  }
+  ul{
+    list-style-type: none;
+    li{
+      .btn-link{
+        font-size: 15px;
+        padding: 2px;
+      }
+    }
+  }
+}
+
+.modal-photo-body{
+  overflow-y: auto;;
+}
+
+.modal-lgx{
+  width: 1200px;
+}
+
+.modal-lgxx{
+  width: 1600px;
+}

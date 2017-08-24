@@ -1,0 +1,7 @@
+{{#each model as |item|}}
+  <li>
+    {{#bs-button class="btn-link" onClick=(action "showPhoto" item)}}
+      {{item.width}} x {{item.height}} {{item.label}}
+    {{/bs-button}}
+  </li>
+{{/each}}
